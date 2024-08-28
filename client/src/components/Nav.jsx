@@ -4,6 +4,7 @@ import searchIcon from '../assets/searchIcon.svg';
 import cartIcon from '../assets/shoppingcart.svg';
 import LISU from '../assets/login-avatar.svg';
 import '../styles/NavBar.css';
+import { NavLink } from 'react-router-dom';
 
 export default function Nav() {
     const [isOpen, setIsOpen] = useState(false);
@@ -15,18 +16,18 @@ export default function Nav() {
     return (
         <nav className="navbar">
             <div className="nav-left">
-                <div className="nav-logo">
+                <NavLink to="/" className="nav-logo">
                     <img src={navLogo} alt="navLogo" />
-                </div>
+                </NavLink>
             </div>
 
             <div className={`nav-center ${isOpen ? 'open' : ''}`}>
                 <ul>
-                    <li><a href="">Mens</a></li>
-                    <li><a href="">Womens</a></li>
-                    <li><a href="">Snowboards</a></li>
-                    <li><a href="">Splitboards</a></li>
-                    <li><a href="">Contact</a></li>
+                    <NavLink to="/mens" className={({ isActive }) => (isActive ? 'active' : '')}><li>Mens</li></NavLink>
+                    <NavLink to="/womens" className={({ isActive }) => (isActive ? 'active' : '')}><li>Womens</li></NavLink>
+                    <NavLink to="/snowboards" className={({ isActive }) => (isActive ? 'active' : '')}><li>Snowboards</li></NavLink>
+                    <NavLink to="/splitboards" className={({ isActive }) => (isActive ? 'active' : '')}><li>Splitboards</li></NavLink>
+                    <NavLink to="/contact" className={({ isActive }) => (isActive ? 'active' : '')}><li>Contact</li></NavLink>
                 </ul>
             </div>
 

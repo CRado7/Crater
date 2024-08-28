@@ -4,6 +4,7 @@ import ToTop from '../assets/to-top.svg';
 import React from 'react';
 import '../styles/HomePage.css';
 import Nav from '../components/Nav';
+import FeaturedProducts from '../components/FeaturedProducts';
 
 export default function HomePage() {
     return (
@@ -11,10 +12,15 @@ export default function HomePage() {
             <>
                 <Nav />
             </>
-            <img src={Banner} alt="HomePage" id="banner" />
-            <img src={Crater} alt="Crater" id="crater" />
-            <h1 id="tagline">Go Beyond The Boundries</h1>
-            <a href=""><img src={ToTop} alt="ToTop" id="toTop"/></a>
+            <>
+                <img src={Banner} alt="HomePage" id="banner" />
+                <img src={Crater} alt="Crater" id="crater" />
+                <h1 id="tagline">Go Beyond The Boundries</h1>
+                <a href=""><img src={ToTop} alt="ToTop" id="toTop"/></a>
+            </>
+            <>
+                <FeaturedProducts />
+            </>
         </div>
     );
 }
