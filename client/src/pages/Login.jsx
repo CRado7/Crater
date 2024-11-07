@@ -28,6 +28,7 @@ const Login = () => {
       }
     } catch (err) {
       console.error('Error logging in', err);
+      console.error('Detailed error:', err);
       alert('Login failed');
     }
   };
