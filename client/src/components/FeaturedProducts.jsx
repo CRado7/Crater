@@ -1,3 +1,4 @@
+import React from 'react';
 import '../styles/FeaturedProducts.css';
 export default function FeaturedProducts() {
     return (
