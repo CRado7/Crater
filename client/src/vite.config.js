@@ -3,23 +3,14 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
-  base: "/", // Adjust this to match your GitHub Pages URL
   server: {
-    port: 3001,
-    open: true,
+    port: 5173, // Vite's default port
     proxy: {
       '/graphql': {
-        target: 'http://localhost:3001',
+        target: 'http://localhost:3001', // Your server URL
         changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/graphql/, '/graphql'),
       }
     }
-  },
-//   build: {
-//     outDir: 'dist', // Specify your output directory
-//     rollupOptions: {
-//       input: {
-//         main: 'src/main.jsx' // Adjust the path to your main entry file
-//       }
-//     }
-//   }
+  }
 });
