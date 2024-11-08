@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
 import { useNavigate } from 'react-router-dom';
 import { LOGIN } from '../utils/mutations';  // Import the login mutation
@@ -28,6 +28,7 @@ const Login = () => {
       }
     } catch (err) {
       console.error('Error logging in', err);
+      console.error('Detailed error:', err);
       alert('Login failed');
     }
   };
